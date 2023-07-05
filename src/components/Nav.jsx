@@ -8,30 +8,24 @@ import menu from "../images/icon-menu.svg";
 import closeMenu from "../images/icon-close.svg";
 
 const Nav = () => {
-  const isMobile = window.innerWidth < 900;
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-
   return (
     <nav className={`container`}>
       <div className="left">
-        {isMobile && (
-          <img src={menuOpen ? closeMenu : menu} alt="Menu" className="menu" onClick={toggleMenu} />
-        )}
+        <img src={menuOpen ? closeMenu : menu} alt="Menu" className="menu" onClick={toggleMenu} />
         <img src={logo} alt="Logo" />
-        {(isMobile || menuOpen) && (
-          <ul>
-            <li>Collections</li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        )}
+        <ul>
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
       </div>
 
       <div className="right">
