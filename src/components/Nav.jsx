@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import nav from "./nav.scss";
+import nav from "./nav.module.scss";
 import logo from "../images/logo.svg";
 import avatar from "../images/image-avatar.png";
 import productIcon from "../images/icon-cart.svg";
@@ -15,9 +15,14 @@ const Nav = () => {
   };
 
   return (
-    <nav className={`container`}>
-      <div className="left">
-        <img src={menuOpen ? closeMenu : menu} alt="Menu" className="menu" onClick={toggleMenu} />
+    <nav className={nav.container}>
+      <div className={nav.left}>
+        <img
+          src={menuOpen ? closeMenu : menu}
+          alt="Menu"
+          className={nav.menu}
+          onClick={toggleMenu}
+        />
         <img src={logo} alt="Logo" />
         <ul>
           <li>Collections</li>
@@ -28,9 +33,9 @@ const Nav = () => {
         </ul>
       </div>
 
-      <div className="right">
-        <img src={productIcon} alt="productIcon" className="icon" />
-        <img src={avatar} alt="Avatar" className="avatar" />
+      <div className={nav.right}>
+        <img src={productIcon} alt="productIcon" className={nav.icon} />
+        <img src={avatar} alt="Avatar" className={nav.avatar} />
       </div>
     </nav>
   );
