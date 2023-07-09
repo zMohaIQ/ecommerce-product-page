@@ -53,8 +53,9 @@ const Hero = () => {
             <span>{counter}</span>
             <button onClick={increaseCounter}>+</button>
           </div>
-          <button>
+          <button className={hero.button}>
             <img src={productIcon} alt="productIcon" />
+            Add to cart
           </button>
         </div>
       </div>

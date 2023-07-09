@@ -59,6 +59,12 @@
       max-width: 50px;
       object-fit: contain;
       margin-left: 3rem;
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid $primary-orange;
+        border-radius: 50%;
+      }
 
       @media (max-width: 900px) {
         max-width: 30px;

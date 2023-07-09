@@ -1,5 +1,7 @@
 @import "../index.scss";
 
+$svg-color: white;
+
 .container {
   padding: 6rem 4rem;
   display: grid;
@@ -8,7 +10,7 @@
   justify-content: center;
   align-items: center;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -16,13 +18,19 @@
     img {
       max-width: 100%;
       border-radius: 1rem;
+      cursor: pointer;
     }
 
     &__imgs {
-      max-width: 20%;
       display: flex;
-      gap: 1.9rem;
+      max-width: 20%;
       margin-top: 1rem;
+      gap: 35%;
+      cursor: pointer;
+
+      img:hover {
+        opacity: 0.5;
+      }
     }
   }
 
@@ -73,8 +81,67 @@
     }
 
     .form {
+      display: flex;
+      max-width: 100%;
+      justify-content: space-between;
+      gap: 2rem;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
       .counter {
-        
+        background-color: $light-grayish-blue;
+        border-radius: 10px;
+        padding: 1rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+        text-align: center;
+
+        button {
+          background: none;
+          text-align: center;
+          color: $primary-orange;
+          font-weight: bold;
+          font-size: 2rem;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      .button {
+        width: 100%;
+        background-color: $primary-orange;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+          padding: 1.2rem;
+        }
       }
     }
   }
