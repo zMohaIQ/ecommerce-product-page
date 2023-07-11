@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../CartContext";
 import nav from "./nav.module.scss";
 import logo from "../images/logo.svg";
 import avatar from "../images/image-avatar.png";
@@ -9,6 +10,7 @@ import closeMenu from "../images/icon-close.svg";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cartOpen, toggleCart } = useContext(CartContext);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -34,7 +36,7 @@ const Nav = () => {
       </div>
 
       <div className={nav.right}>
-        <img src={productIcon} alt="productIcon" className={nav.icon} />
+        <img src={productIcon} alt="productIcon" className={nav.icon} onClick={toggleCart} />
         <img src={avatar} alt="Avatar" className={nav.avatar} />
       </div>
     </nav>

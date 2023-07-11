@@ -11,11 +11,19 @@ $svg-color: white;
       right: 0;
       z-index: 500;
       margin-top: -1rem;
-      width: 30%;
+      width: 350px;
+      border-radius: 10px;
       background-color: white;
       -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.18);
       -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.18);
       box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.18);
+
+      @media (max-width: 600px) {
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, 25%);
+        width: 90%;
+      }
 
       h3 {
         padding: 1rem 2rem;

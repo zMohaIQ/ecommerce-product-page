@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../CartContext";
+
 import hero from "./hero.module.scss";
 import productIcon from "../images/icon-cart.svg";
 import product_1_small from "../images/image-product-1-thumbnail.jpg";
@@ -13,6 +15,7 @@ import product_4 from "../images/image-product-4.jpg";
 
 const Hero = () => {
   const [counter, setCounter] = useState(0);
+  const { cartOpen } = useContext(CartContext);
 
   const increaseCounter = () => {
     setCounter(counter + 1);
@@ -23,16 +26,17 @@ const Hero = () => {
       setCounter(counter - 1);
     }
   };
-
   return (
     <main className={hero.hero}>
       <div className={hero.container}>
-        <div className={hero.cartOpen}>
-          <h3>Cart</h3>
-          <div className={hero.items}>
-            <p>Your cart is empty.</p>
+        {cartOpen && (
+          <div className={hero.cartOpen}>
+            <h3>Cart</h3>
+            <div className={hero.items}>
+              <p>Your cart is empty.</p>
+            </div>
           </div>
-        </div>
+        )}
         <div className={hero.products}>
           <div className={hero.left}>
             <img src={product_1} alt="product_1" />
