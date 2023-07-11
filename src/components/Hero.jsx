@@ -25,38 +25,48 @@ const Hero = () => {
   };
 
   return (
-    <main className={hero.container}>
-      <div className={hero.left}>
-        <img src={product_1} alt="product_1" />
-        <div className={hero.left__imgs}>
-          <img src={product_1_small} alt="product_1_small" />
-          <img src={product_2_small} alt="product_2_small" />
-          <img src={product_3_small} alt="product_3_small" />
-          <img src={product_4_small} alt="product_4_small" />
-        </div>
-      </div>
-      <div className={hero.right}>
-        <h4>Sneaker Company</h4>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion. Featuring a durable
-          rubber outer sole, they’ll withstand everything the weather can offer.
-        </p>
-        <div className={hero.right__price}>
-          <p>$125.00</p>
-          <span>50%</span>
-        </div>
-        <p className={hero.right__old_price}>$250.00</p>
-        <div className={hero.form}>
-          <div className={hero.counter}>
-            <button onClick={decreaseCounter}>-</button>
-            <span>{counter}</span>
-            <button onClick={increaseCounter}>+</button>
+    <main className={hero.hero}>
+      <div className={hero.container}>
+        <div className={hero.cartOpen}>
+          <h3>Cart</h3>
+          <div className={hero.items}>
+            <p>Your cart is empty.</p>
           </div>
-          <button className={hero.button}>
-            <img src={productIcon} alt="productIcon" />
-            Add to cart
-          </button>
+        </div>
+        <div className={hero.products}>
+          <div className={hero.left}>
+            <img src={product_1} alt="product_1" />
+            <div className={hero.left__imgs}>
+              <img src={product_1_small} alt="product_1_small" />
+              <img src={product_2_small} alt="product_2_small" />
+              <img src={product_3_small} alt="product_3_small" />
+              <img src={product_4_small} alt="product_4_small" />
+            </div>
+          </div>
+          <div className={hero.right}>
+            <h4>Sneaker Company</h4>
+            <h1>Fall Limited Edition Sneakers</h1>
+            <p>
+              These low-profile sneakers are your perfect casual wear companion. Featuring a durable
+              rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+            <div className={hero.right__price}>
+              <p>$125.00</p>
+              <span>50%</span>
+            </div>
+            <p className={hero.right__old_price}>$250.00</p>
+            <div className={hero.form}>
+              <div className={hero.counter}>
+                <button onClick={decreaseCounter}>-</button>
+                <span>{counter}</span>
+                <button onClick={increaseCounter}>+</button>
+              </div>
+              <button className={hero.button}>
+                <img src={productIcon} alt="productIcon" />
+                Add to cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </main>
