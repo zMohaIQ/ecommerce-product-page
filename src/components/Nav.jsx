@@ -10,10 +10,10 @@ import closeMenu from "../images/icon-close.svg";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { cartOpen, toggleCart } = useContext(CartContext);
+  const { toggleCart } = useContext(CartContext);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen(prevMenu => !prevMenu);
   };
 
   return (

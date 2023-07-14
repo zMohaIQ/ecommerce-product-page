@@ -5,13 +5,18 @@ import React, { createContext, useState } from "react";
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [cartOpen, setCartOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(true);
+  const [cartItems, setCartItems] = useState([]);
 
   const toggleCart = () => {
-    setCartOpen(!cartOpen);
+    setCartOpen((prevCart) => !prevCart);
   };
 
-  return <CartContext.Provider value={{ cartOpen, toggleCart }}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={{ cartOpen, toggleCart, cartItems, setCartItems }}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
 export { CartContext, CartProvider };
