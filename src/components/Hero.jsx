@@ -15,7 +15,7 @@ import product_4 from "../images/image-product-4.jpg";
 import Cart from "./Cart";
 
 const Hero = () => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const [selectedProduct, setSelectedProduct] = useState(product_1);
   const { cartItems, setCartItems } = useContext(CartContext);
 
@@ -24,7 +24,7 @@ const Hero = () => {
   };
 
   const decreaseCounter = () => {
-    if (counter > 0) {
+    if (counter > 1) {
       setCounter(counter - 1);
     }
   };
@@ -45,7 +45,6 @@ const addToCart = () => {
       }
       return item;
     });
-
     setCartItems(updatedCartItems);
   } else {
     const newItem = {
