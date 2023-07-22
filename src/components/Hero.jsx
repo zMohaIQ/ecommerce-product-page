@@ -20,43 +20,42 @@ const Hero = () => {
   const { cartItems, setCartItems } = useContext(CartContext);
 
   const increaseCounter = () => {
-    setCounter(counter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
   };
 
   const decreaseCounter = () => {
     if (counter > 1) {
-      setCounter(counter - 1);
+      setCounter((prevCounter) => prevCounter - 1);
     }
   };
-const addToCart = () => {
-  if (counter === 0) {
-    return; // Skip adding to cart if counter is 0
-  }
+  const addToCart = () => {
+    if (counter === 0) {
+      return; // Skip adding to cart if counter is 0
+    }
 
-  const existingItem = cartItems.find((item) => item.image === selectedProduct);
+    const existingItem = cartItems.find((item) => item.image === selectedProduct);
 
-  if (existingItem) {
-    const updatedCartItems = cartItems.map((item) => {
-      if (item.image === selectedProduct) {
-        return {
-          ...item,
-          quantity: item.quantity + counter,
-        };
-      }
-      return item;
-    });
-    setCartItems(updatedCartItems);
-  } else {
-    const newItem = {
-      image: selectedProduct,
-      name: "Fall Limited Edition Sneakers",
-      price: 125.0,
-      quantity: counter,
-    };
-    setCartItems([...cartItems, newItem]);
-  }
-};
-
+    if (existingItem) {
+      const updatedCartItems = cartItems.map((item) => {
+        if (item.image === selectedProduct) {
+          return {
+            ...item,
+            quantity: item.quantity + counter,
+          };
+        }
+        return item;
+      });
+      setCartItems(updatedCartItems);
+    } else {
+      const newItem = {
+        image: selectedProduct,
+        name: "Fall Limited Edition Sneakers",
+        price: 125.0,
+        quantity: counter,
+      };
+      setCartItems([...cartItems, newItem]);
+    }
+  };
 
   return (
     <main className={hero.hero}>
