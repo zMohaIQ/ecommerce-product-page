@@ -28,6 +28,8 @@ const Hero = () => {
       setCounter((prevCounter) => prevCounter - 1);
     }
   };
+
+  
   const addToCart = () => {
     if (counter === 0) {
       return; // Skip adding to cart if counter is 0
@@ -38,9 +40,12 @@ const Hero = () => {
     if (existingItem) {
       const updatedCartItems = cartItems.map((item) => {
         if (item.image === selectedProduct) {
+          const updatedQuantity = item.quantity + counter;
+          const updatedPrice = 125.0 * updatedQuantity; // Use the initial price and update based on quantity
           return {
             ...item,
-            quantity: item.quantity + counter,
+            quantity: updatedQuantity,
+            price: updatedPrice,
           };
         }
         return item;
@@ -50,12 +55,13 @@ const Hero = () => {
       const newItem = {
         image: selectedProduct,
         name: "Fall Limited Edition Sneakers",
-        price: 125.0,
+        price: 125.0 * counter,
         quantity: counter,
       };
       setCartItems([...cartItems, newItem]);
     }
   };
+
 
   return (
     <main className={hero.hero}>

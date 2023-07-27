@@ -3,6 +3,7 @@
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
 import cart from "./cart.module.scss";
+import deleteIcon from "../images/icon-delete.svg";
 
 const Cart = ({ cartItems }) => {
   const { cartOpen, setCartItems } = useContext(CartContext);
@@ -25,15 +26,20 @@ const Cart = ({ cartItems }) => {
                   <div className={cart.item__holder}>
                     <img src={item.image} alt={item.name} />
                     <div className={cart.itemDetails}>
-                      <h4>{item.name}</h4>
-                      <p>${item.price}</p>
-                      <p>{item.quantity}</p>
+                      <p>{item.name}</p>
+                      <p>
+                        $125.00 x <span>{item.quantity}</span>{" "}
+                        <span className={cart.price}>${item.price}</span>
+                      </p>
                     </div>
-                    <button className={cart.delete} onClick={() => removeItem(index)}>
-                      Delete
-                    </button>
+                    <img
+                      src={deleteIcon}
+                      alt="deleteIcon"
+                      className={cart.delete}
+                      onClick={() => removeItem(index)}
+                    />
                   </div>
-                  <button className={cart.check}>Check Out</button>
+                  <button className={cart.button}>Check Out</button>
                 </div>
               ))}
             </div>

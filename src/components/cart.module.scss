@@ -26,18 +26,63 @@
     }
 
     .item {
+      padding: 2rem;
+
       &__holder {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         img {
-          width: 4rem;
+          width: 3.2rem;
+          height: 3.2rem;
           border-radius: 5px;
         }
 
         .itemDetails {
+          p {
+            color: $dark-grayish-blue;
+            font-size: normal;
+            padding: 0.1rem;
+          }
+
+          .price {
+            font-weight: bold;
+            color: black;
+            margin-left: 0.3rem;
+          }
         }
 
         .delete {
+          cursor: pointer;
+          width: 1rem;
+          height: 1.2rem;
+        }
+      }
+
+      .button {
+        width: 100%;
+        background-color: $primary-orange;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        cursor: pointer;
+        padding: 1.2rem;
+        margin-top: 2rem;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+          padding: 1.2rem;
         }
       }
     }
